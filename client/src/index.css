@@ -2,48 +2,48 @@
 @tailwind components;
 @tailwind utilities;
 
-/* LIGHT MODE */
+/* LIGHT MODE - 80s Zine Photocopied Aesthetic */
 :root {
-  --button-outline: rgba(0,0,0, .10);
-  --badge-outline: rgba(0,0,0, .05);
-  --opaque-button-border-intensity: -8;
-  --elevate-1: rgba(0,0,0, .03);
-  --elevate-2: rgba(0,0,0, .08);
-  --background: 42 25% 92%;
-  --foreground: 0 0% 5%;
-  --border: 0 0% 25%;
-  --card: 40 20% 96%;
-  --card-foreground: 0 0% 5%;
-  --card-border: 0 0% 30%;
-  --sidebar: 40 18% 94%;
-  --sidebar-foreground: 0 0% 5%;
-  --sidebar-border: 0 0% 28%;
-  --sidebar-primary: 0 85% 45%;
+  --button-outline: rgba(0,0,0, .20);
+  --badge-outline: rgba(0,0,0, .15);
+  --opaque-button-border-intensity: -12;
+  --elevate-1: rgba(0,0,0, .05);
+  --elevate-2: rgba(0,0,0, .12);
+  --background: 0 0% 98%;
+  --foreground: 0 0% 0%;
+  --border: 0 0% 0%;
+  --card: 0 0% 100%;
+  --card-foreground: 0 0% 0%;
+  --card-border: 0 0% 0%;
+  --sidebar: 0 0% 96%;
+  --sidebar-foreground: 0 0% 0%;
+  --sidebar-border: 0 0% 0%;
+  --sidebar-primary: 0 0% 0%;
   --sidebar-primary-foreground: 0 0% 100%;
-  --sidebar-accent: 40 15% 88%;
-  --sidebar-accent-foreground: 0 0% 5%;
-  --sidebar-ring: 0 85% 45%;
-  --popover: 40 20% 95%;
-  --popover-foreground: 0 0% 5%;
-  --popover-border: 0 0% 28%;
-  --primary: 0 85% 45%;
+  --sidebar-accent: 0 0% 92%;
+  --sidebar-accent-foreground: 0 0% 0%;
+  --sidebar-ring: 0 0% 0%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 0 0% 0%;
+  --popover-border: 0 0% 0%;
+  --primary: 0 0% 0%;
   --primary-foreground: 0 0% 100%;
-  --secondary: 0 0% 18%;
-  --secondary-foreground: 0 0% 98%;
-  --muted: 40 12% 85%;
-  --muted-foreground: 0 0% 35%;
-  --accent: 48 100% 55%;
-  --accent-foreground: 0 0% 5%;
-  --destructive: 0 75% 35%;
-  --destructive-foreground: 0 0% 98%;
-  --input: 0 0% 30%;
-  --ring: 0 85% 45%;
-  --chart-1: 0 85% 45%;
-  --chart-2: 48 100% 55%;
-  --chart-3: 330 75% 50%;
-  --chart-4: 0 0% 18%;
-  --chart-5: 180 5% 25%;
-  --font-sans: 'Inter', 'Arial', sans-serif;
+  --secondary: 0 0% 92%;
+  --secondary-foreground: 0 0% 0%;
+  --muted: 0 0% 88%;
+  --muted-foreground: 0 0% 25%;
+  --accent: 0 85% 50%;
+  --accent-foreground: 0 0% 100%;
+  --destructive: 0 85% 50%;
+  --destructive-foreground: 0 0% 100%;
+  --input: 0 0% 0%;
+  --ring: 0 0% 0%;
+  --chart-1: 0 0% 0%;
+  --chart-2: 0 85% 50%;
+  --chart-3: 48 100% 50%;
+  --chart-4: 0 0% 60%;
+  --chart-5: 0 0% 30%;
+  --font-sans: 'Courier New', 'Arial Black', sans-serif;
   --font-serif: Georgia, serif;
   --font-mono: 'Courier New', monospace;
   --radius: .5rem;
@@ -88,45 +88,45 @@
 }
 
 .dark {
-  --button-outline: rgba(255,255,255, .10);
-  --badge-outline: rgba(255,255,255, .05);
-  --opaque-button-border-intensity: 9;
-  --elevate-1: rgba(255,255,255, .04);
-  --elevate-2: rgba(255,255,255, .09);
+  --button-outline: rgba(255,255,255, .20);
+  --badge-outline: rgba(255,255,255, .15);
+  --opaque-button-border-intensity: 12;
+  --elevate-1: rgba(255,255,255, .05);
+  --elevate-2: rgba(255,255,255, .12);
   --background: 0 0% 8%;
-  --foreground: 0 0% 95%;
-  --border: 0 0% 28%;
-  --card: 0 0% 12%;
-  --card-foreground: 0 0% 95%;
-  --card-border: 0 0% 22%;
-  --sidebar: 0 0% 10%;
-  --sidebar-foreground: 0 0% 95%;
-  --sidebar-border: 0 0% 20%;
-  --sidebar-primary: 0 85% 50%;
-  --sidebar-primary-foreground: 0 0% 100%;
-  --sidebar-accent: 0 0% 16%;
-  --sidebar-accent-foreground: 0 0% 95%;
-  --sidebar-ring: 0 85% 50%;
-  --popover: 0 0% 12%;
-  --popover-foreground: 0 0% 95%;
-  --popover-border: 0 0% 22%;
-  --primary: 0 85% 50%;
-  --primary-foreground: 0 0% 100%;
-  --secondary: 0 0% 85%;
-  --secondary-foreground: 0 0% 10%;
+  --foreground: 0 0% 100%;
+  --border: 0 0% 100%;
+  --card: 0 0% 0%;
+  --card-foreground: 0 0% 100%;
+  --card-border: 0 0% 100%;
+  --sidebar: 0 0% 12%;
+  --sidebar-foreground: 0 0% 100%;
+  --sidebar-border: 0 0% 100%;
+  --sidebar-primary: 0 0% 100%;
+  --sidebar-primary-foreground: 0 0% 0%;
+  --sidebar-accent: 0 0% 20%;
+  --sidebar-accent-foreground: 0 0% 100%;
+  --sidebar-ring: 0 0% 100%;
+  --popover: 0 0% 0%;
+  --popover-foreground: 0 0% 100%;
+  --popover-border: 0 0% 100%;
+  --primary: 0 0% 100%;
+  --primary-foreground: 0 0% 0%;
+  --secondary: 0 0% 20%;
+  --secondary-foreground: 0 0% 100%;
   --muted: 0 0% 18%;
-  --muted-foreground: 0 0% 65%;
-  --accent: 48 100% 60%;
-  --accent-foreground: 0 0% 10%;
-  --destructive: 0 75% 40%;
-  --destructive-foreground: 0 0% 98%;
-  --input: 0 0% 35%;
-  --ring: 0 85% 50%;
-  --chart-1: 0 85% 55%;
-  --chart-2: 48 100% 60%;
-  --chart-3: 330 75% 60%;
-  --chart-4: 0 0% 85%;
-  --chart-5: 180 5% 70%;
+  --muted-foreground: 0 0% 70%;
+  --accent: 0 85% 55%;
+  --accent-foreground: 0 0% 0%;
+  --destructive: 0 85% 55%;
+  --destructive-foreground: 0 0% 0%;
+  --input: 0 0% 100%;
+  --ring: 0 0% 100%;
+  --chart-1: 0 0% 100%;
+  --chart-2: 0 85% 55%;
+  --chart-3: 48 100% 60%;
+  --chart-4: 0 0% 60%;
+  --chart-5: 0 0% 80%;
   --shadow-2xs: 0px 2px 0px 0px hsl(0 0% 0% / 0.00);
   --shadow-xs: 0px 2px 0px 0px hsl(0 0% 0% / 0.00);
   --shadow-sm: 0px 2px 0px 0px hsl(0 0% 0% / 0.00), 0px 1px 2px -1px hsl(0 0% 0% / 0.00);
@@ -196,23 +196,32 @@
  * need to be distinguished from eachother visually.
  */
 @layer utilities {
-  /* Punk/Zine aesthetic utilities */
+  /* 80s Punk Zine Photocopied Aesthetic */
   .punk-rotate-1 {
-    transform: rotate(0.5deg);
-  }
-  
-  .punk-rotate-2 {
-    transform: rotate(-1deg);
-  }
-  
-  .punk-rotate-3 {
     transform: rotate(1.5deg);
   }
   
-  .punk-rotate-4 {
-    transform: rotate(-0.5deg);
+  .punk-rotate-2 {
+    transform: rotate(-2deg);
   }
   
+  .punk-rotate-3 {
+    transform: rotate(2.5deg);
+  }
+  
+  .punk-rotate-4 {
+    transform: rotate(-1.5deg);
+  }
+  
+  .punk-rotate-5 {
+    transform: rotate(3deg);
+  }
+  
+  .punk-rotate-6 {
+    transform: rotate(-3deg);
+  }
+  
+  /* Heavy grain for photocopied look */
   .grain-texture {
     position: relative;
   }
@@ -221,26 +230,67 @@
     content: '';
     position: absolute;
     inset: 0;
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
-    opacity: 0.03;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='2.5' numOctaves='6' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+    opacity: 0.08;
     pointer-events: none;
     z-index: 1;
+    mix-blend-mode: multiply;
   }
   
-  .torn-edge-top {
+  /* Extra heavy grain for photocopier effect */
+  .xerox-grain {
+    position: relative;
+  }
+  
+  .xerox-grain::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='xerox'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='3' numOctaves='8'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23xerox)'/%3E%3C/svg%3E");
+    opacity: 0.12;
+    pointer-events: none;
+    z-index: 2;
+  }
+  
+  .torn-edge {
     clip-path: polygon(
-      0% 2%, 5% 0%, 10% 3%, 15% 1%, 20% 2%, 25% 0%, 30% 3%, 
-      35% 1%, 40% 2%, 45% 0%, 50% 3%, 55% 1%, 60% 2%, 65% 0%, 
-      70% 3%, 75% 1%, 80% 2%, 85% 0%, 90% 3%, 95% 1%, 100% 2%, 
-      100% 100%, 0% 100%
+      0% 1%, 2% 3%, 4% 1%, 6% 4%, 8% 2%, 10% 5%, 12% 1%, 14% 4%, 
+      16% 2%, 18% 5%, 20% 1%, 22% 4%, 24% 2%, 26% 5%, 28% 1%, 30% 4%,
+      32% 2%, 34% 5%, 36% 1%, 38% 4%, 40% 2%, 42% 5%, 44% 1%, 46% 4%,
+      48% 2%, 50% 5%, 52% 1%, 54% 4%, 56% 2%, 58% 5%, 60% 1%, 62% 4%,
+      64% 2%, 66% 5%, 68% 1%, 70% 4%, 72% 2%, 74% 5%, 76% 1%, 78% 4%,
+      80% 2%, 82% 5%, 84% 1%, 86% 4%, 88% 2%, 90% 5%, 92% 1%, 94% 4%,
+      96% 2%, 98% 5%, 100% 1%,
+      100% 99%, 98% 95%, 96% 98%, 94% 96%, 92% 99%, 90% 95%, 88% 98%,
+      86% 96%, 84% 99%, 82% 95%, 80% 98%, 78% 96%, 76% 99%, 74% 95%,
+      72% 98%, 70% 96%, 68% 99%, 66% 95%, 64% 98%, 62% 96%, 60% 99%,
+      58% 95%, 56% 98%, 54% 96%, 52% 99%, 50% 95%, 48% 98%, 46% 96%,
+      44% 99%, 42% 95%, 40% 98%, 38% 96%, 36% 99%, 34% 95%, 32% 98%,
+      30% 96%, 28% 99%, 26% 95%, 24% 98%, 22% 96%, 20% 99%, 18% 95%,
+      16% 98%, 14% 96%, 12% 99%, 10% 95%, 8% 98%, 6% 96%, 4% 99%, 2% 95%, 0% 99%
     );
   }
   
   .stamp-effect {
     box-shadow: 
-      inset 0 0 0 2px currentColor,
-      inset 0 0 0 4px transparent,
-      inset 0 0 0 6px currentColor;
+      inset 0 0 0 3px currentColor,
+      inset 0 0 0 6px transparent,
+      inset 0 0 0 9px currentColor;
+  }
+  
+  /* Hand-drawn box effect */
+  .hand-drawn-box {
+    position: relative;
+  }
+  
+  .hand-drawn-box::before {
+    content: '';
+    position: absolute;
+    inset: -2px;
+    border: 3px solid currentColor;
+    border-radius: 2px;
+    transform: rotate(0.5deg);
+    pointer-events: none;
   }
 
   /* Hide ugly search cancel button in Chrome until we can style it properly */

@@ -26,10 +26,10 @@ export default function CartDrawer({
 }: CartDrawerProps) {
   return (
     <Sheet open={open} onOpenChange={onClose}>
-      <SheetContent className="w-full sm:max-w-lg border-l-4 border-foreground">
-        <SheetHeader className="border-b-2 border-foreground pb-4">
-          <SheetTitle className="text-2xl font-black uppercase punk-rotate-1" data-testid="text-cart-title">
-            Your Cart
+      <SheetContent className="w-full sm:max-w-lg border-l-[5px] border-foreground xerox-grain">
+        <SheetHeader className="border-b-[3px] border-foreground pb-3">
+          <SheetTitle className="text-3xl font-black uppercase tracking-tighter leading-none punk-rotate-2" data-testid="text-cart-title">
+            YOUR<br/>CART
           </SheetTitle>
           <SheetDescription className="sr-only">
             Shopping cart with {items.length} items
@@ -52,63 +52,65 @@ export default function CartDrawer({
                 {items.map((item, index) => (
                   <div
                     key={item.id}
-                    className="border-2 border-foreground p-4 space-y-3 relative overflow-visible"
+                    className="border-[3px] border-foreground p-3 space-y-2 relative overflow-visible xerox-grain"
                     data-testid={`cart-item-${item.id}`}
                   >
                     <Button
                       variant="ghost"
                       size="icon"
                       onClick={() => onRemove(item.id)}
-                      className="absolute -top-2 -right-2 h-8 w-8 bg-destructive text-destructive-foreground hover:bg-destructive border-2 border-foreground punk-rotate-3"
+                      className="absolute -top-3 -right-3 h-9 w-9 bg-destructive text-destructive-foreground hover:bg-destructive border-[3px] border-foreground punk-rotate-5"
                       data-testid={`button-remove-${item.id}`}
                     >
-                      <X className="h-4 w-4" />
+                      <X className="h-5 w-5 font-black" />
                     </Button>
 
-                    <div className="flex gap-4">
+                    <div className="flex gap-3">
                       <img
                         src={item.image}
                         alt={item.name}
-                        className="w-20 h-20 object-cover border-2 border-foreground"
+                        className="w-16 h-16 object-cover border-[2px] border-foreground contrast-125"
                         data-testid={`img-cart-item-${item.id}`}
                       />
                       <div className="flex-1">
-                        <p className="text-xs font-bold uppercase text-muted-foreground" data-testid={`text-cart-band-${item.id}`}>
+                        <p className="text-[9px] font-black uppercase tracking-wider" data-testid={`text-cart-band-${item.id}`}>
                           {item.band}
                         </p>
-                        <h4 className="font-bold uppercase" data-testid={`text-cart-name-${item.id}`}>
+                        <h4 className="font-black uppercase text-sm leading-tight" data-testid={`text-cart-name-${item.id}`}>
                           {item.name}
                         </h4>
-                        <p className="text-sm font-bold mt-1" data-testid={`text-cart-price-${item.id}`}>
-                          ${item.price} each
+                        <p className="text-xs font-black mt-0.5" data-testid={`text-cart-price-${item.id}`}>
+                          ${item.price}
                         </p>
                       </div>
                     </div>
 
-                    <div className="flex items-center justify-between">
-                      <div className="flex items-center gap-2">
+                    <div className="flex items-center justify-between pt-1">
+                      <div className="flex items-center gap-1.5">
                         <Button
                           variant="secondary"
                           size="icon"
                           onClick={() => onUpdateQuantity(item.id, item.quantity - 1)}
                           disabled={item.quantity <= 1}
+                          className="h-8 w-8 border-[2px]"
                           data-testid={`button-decrease-${item.id}`}
                         >
-                          <Minus className="h-4 w-4" />
+                          <Minus className="h-3 w-3" />
                         </Button>
-                        <Badge variant="outline" className="px-4 py-2 font-bold text-base" data-testid={`text-quantity-${item.id}`}>
+                        <Badge variant="outline" className="px-3 py-1.5 font-black text-sm border-[2px]" data-testid={`text-quantity-${item.id}`}>
                           {item.quantity}
                         </Badge>
                         <Button
                           variant="secondary"
                           size="icon"
                           onClick={() => onUpdateQuantity(item.id, item.quantity + 1)}
+                          className="h-8 w-8 border-[2px]"
                           data-testid={`button-increase-${item.id}`}
                         >
-                          <Plus className="h-4 w-4" />
+                          <Plus className="h-3 w-3" />
                         </Button>
                       </div>
-                      <p className="font-black text-lg" data-testid={`text-subtotal-${item.id}`}>
+                      <p className="font-black text-xl" data-testid={`text-subtotal-${item.id}`}>
                         ${(item.price * item.quantity).toFixed(2)}
                       </p>
                     </div>
@@ -117,20 +119,20 @@ export default function CartDrawer({
               </div>
             </ScrollArea>
 
-            <div className="border-t-4 border-foreground pt-4 space-y-4 mt-4">
-              <div className="flex justify-between items-center">
-                <span className="text-xl font-black uppercase">Total:</span>
-                <span className="text-2xl font-black text-primary" data-testid="text-cart-total">
+            <div className="border-t-[4px] border-foreground pt-4 space-y-3 mt-4">
+              <div className="flex justify-between items-center border-[3px] border-foreground p-3 punk-rotate-1">
+                <span className="text-2xl font-black uppercase tracking-tight">TOTAL:</span>
+                <span className="text-3xl font-black" data-testid="text-cart-total">
                   ${total.toFixed(2)}
                 </span>
               </div>
               <Button
                 onClick={onCheckout}
-                className="w-full font-black text-lg uppercase py-6"
+                className="w-full font-black text-base uppercase py-6 border-[3px]"
                 size="lg"
                 data-testid="button-checkout"
               >
-                Checkout Now
+                ▶ CHECKOUT NOW ◀
               </Button>
             </div>
           </div>

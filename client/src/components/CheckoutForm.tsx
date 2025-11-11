@@ -43,20 +43,20 @@ export default function CheckoutForm({ onSubmit, total }: CheckoutFormProps) {
 
   return (
     <div className="max-w-2xl mx-auto p-6">
-      <div className="mb-8">
-        <h2 className="text-3xl font-black uppercase punk-rotate-1 mb-2" data-testid="text-checkout-title">
-          Checkout
+      <div className="mb-6 border-[4px] border-foreground p-4 punk-rotate-2 xerox-grain">
+        <h2 className="text-4xl md:text-5xl font-black uppercase tracking-tighter leading-none punk-rotate-1" data-testid="text-checkout-title">
+          CHECK<br/>OUT
         </h2>
-        <p className="text-sm font-bold uppercase tracking-wide text-muted-foreground">
-          Complete your order
+        <p className="text-xs font-black uppercase tracking-wide mt-2 border-l-[3px] border-foreground pl-3">
+          COMPLETE YOUR ORDER
         </p>
       </div>
 
       <Form {...form}>
         <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
-          <Card className="p-6 border-2 border-foreground space-y-4 punk-rotate-1">
-            <h3 className="font-black uppercase text-lg border-b-2 border-foreground pb-2">
-              Contact Information
+          <Card className="p-5 border-[3px] border-foreground space-y-4 punk-rotate-1 xerox-grain">
+            <h3 className="font-black uppercase text-xl tracking-tight border-b-[3px] border-foreground pb-2">
+              CONTACT INFO
             </h3>
             
             <FormField
@@ -64,9 +64,9 @@ export default function CheckoutForm({ onSubmit, total }: CheckoutFormProps) {
               name="fullName"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel className="font-bold uppercase text-xs">Full Name</FormLabel>
+                  <FormLabel className="font-black uppercase text-[10px] tracking-wider">FULL NAME</FormLabel>
                   <FormControl>
-                    <Input {...field} className="border-2 border-input" data-testid="input-fullname" />
+                    <Input {...field} className="border-[2px] border-input font-mono" data-testid="input-fullname" />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -78,9 +78,9 @@ export default function CheckoutForm({ onSubmit, total }: CheckoutFormProps) {
               name="email"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel className="font-bold uppercase text-xs">Email</FormLabel>
+                  <FormLabel className="font-black uppercase text-[10px] tracking-wider">EMAIL</FormLabel>
                   <FormControl>
-                    <Input {...field} type="email" className="border-2 border-input" data-testid="input-email" />
+                    <Input {...field} type="email" className="border-[2px] border-input font-mono" data-testid="input-email" />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -88,9 +88,9 @@ export default function CheckoutForm({ onSubmit, total }: CheckoutFormProps) {
             />
           </Card>
 
-          <Card className="p-6 border-2 border-foreground space-y-4 punk-rotate-2">
-            <h3 className="font-black uppercase text-lg border-b-2 border-foreground pb-2">
-              Shipping Address
+          <Card className="p-5 border-[3px] border-foreground space-y-4 punk-rotate-2 xerox-grain">
+            <h3 className="font-black uppercase text-xl tracking-tight border-b-[3px] border-foreground pb-2">
+              SHIPPING ADDRESS
             </h3>
             
             <FormField
@@ -98,9 +98,9 @@ export default function CheckoutForm({ onSubmit, total }: CheckoutFormProps) {
               name="address"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel className="font-bold uppercase text-xs">Street Address</FormLabel>
+                  <FormLabel className="font-black uppercase text-[10px] tracking-wider">STREET ADDRESS</FormLabel>
                   <FormControl>
-                    <Input {...field} className="border-2 border-input" data-testid="input-address" />
+                    <Input {...field} className="border-[2px] border-input font-mono" data-testid="input-address" />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -113,9 +113,9 @@ export default function CheckoutForm({ onSubmit, total }: CheckoutFormProps) {
                 name="city"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel className="font-bold uppercase text-xs">City</FormLabel>
+                    <FormLabel className="font-black uppercase text-[10px] tracking-wider">CITY</FormLabel>
                     <FormControl>
-                      <Input {...field} className="border-2 border-input" data-testid="input-city" />
+                      <Input {...field} className="border-[2px] border-input font-mono" data-testid="input-city" />
                     </FormControl>
                     <FormMessage />
                   </FormItem>
@@ -127,9 +127,9 @@ export default function CheckoutForm({ onSubmit, total }: CheckoutFormProps) {
                 name="state"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel className="font-bold uppercase text-xs">State</FormLabel>
+                    <FormLabel className="font-black uppercase text-[10px] tracking-wider">STATE</FormLabel>
                     <FormControl>
-                      <Input {...field} className="border-2 border-input" data-testid="input-state" />
+                      <Input {...field} className="border-[2px] border-input font-mono" data-testid="input-state" />
                     </FormControl>
                     <FormMessage />
                   </FormItem>
@@ -142,9 +142,9 @@ export default function CheckoutForm({ onSubmit, total }: CheckoutFormProps) {
               name="zipCode"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel className="font-bold uppercase text-xs">ZIP Code</FormLabel>
+                  <FormLabel className="font-black uppercase text-[10px] tracking-wider">ZIP CODE</FormLabel>
                   <FormControl>
-                    <Input {...field} className="border-2 border-input" data-testid="input-zipcode" />
+                    <Input {...field} className="border-[2px] border-input font-mono" data-testid="input-zipcode" />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -152,9 +152,9 @@ export default function CheckoutForm({ onSubmit, total }: CheckoutFormProps) {
             />
           </Card>
 
-          <Card className="p-6 border-2 border-foreground space-y-4 punk-rotate-3">
-            <h3 className="font-black uppercase text-lg border-b-2 border-foreground pb-2">
-              Payment Information
+          <Card className="p-5 border-[3px] border-foreground space-y-4 punk-rotate-3 xerox-grain">
+            <h3 className="font-black uppercase text-xl tracking-tight border-b-[3px] border-foreground pb-2">
+              PAYMENT INFO
             </h3>
             
             <FormField
@@ -162,9 +162,9 @@ export default function CheckoutForm({ onSubmit, total }: CheckoutFormProps) {
               name="cardNumber"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel className="font-bold uppercase text-xs">Card Number</FormLabel>
+                  <FormLabel className="font-black uppercase text-[10px] tracking-wider">CARD NUMBER</FormLabel>
                   <FormControl>
-                    <Input {...field} placeholder="1234 5678 9012 3456" className="border-2 border-input" data-testid="input-cardnumber" />
+                    <Input {...field} placeholder="1234 5678 9012 3456" className="border-[2px] border-input font-mono" data-testid="input-cardnumber" />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -177,9 +177,9 @@ export default function CheckoutForm({ onSubmit, total }: CheckoutFormProps) {
                 name="expiryDate"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel className="font-bold uppercase text-xs">Expiry Date</FormLabel>
+                    <FormLabel className="font-black uppercase text-[10px] tracking-wider">EXPIRY</FormLabel>
                     <FormControl>
-                      <Input {...field} placeholder="MM/YY" className="border-2 border-input" data-testid="input-expiry" />
+                      <Input {...field} placeholder="MM/YY" className="border-[2px] border-input font-mono" data-testid="input-expiry" />
                     </FormControl>
                     <FormMessage />
                   </FormItem>
@@ -191,9 +191,9 @@ export default function CheckoutForm({ onSubmit, total }: CheckoutFormProps) {
                 name="cvv"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel className="font-bold uppercase text-xs">CVV</FormLabel>
+                    <FormLabel className="font-black uppercase text-[10px] tracking-wider">CVV</FormLabel>
                     <FormControl>
-                      <Input {...field} placeholder="123" className="border-2 border-input" data-testid="input-cvv" />
+                      <Input {...field} placeholder="123" className="border-[2px] border-input font-mono" data-testid="input-cvv" />
                     </FormControl>
                     <FormMessage />
                   </FormItem>
@@ -202,20 +202,20 @@ export default function CheckoutForm({ onSubmit, total }: CheckoutFormProps) {
             </div>
           </Card>
 
-          <Card className="p-6 border-2 border-foreground bg-card">
-            <div className="flex justify-between items-center mb-4">
-              <span className="font-black uppercase text-xl">Order Total:</span>
-              <span className="font-black text-2xl text-primary" data-testid="text-order-total">
+          <Card className="p-5 border-[4px] border-foreground bg-card punk-rotate-1">
+            <div className="flex justify-between items-center mb-4 border-[2px] border-foreground p-3">
+              <span className="font-black uppercase text-xl tracking-tight">TOTAL:</span>
+              <span className="font-black text-3xl" data-testid="text-order-total">
                 ${total.toFixed(2)}
               </span>
             </div>
             <Button
               type="submit"
-              className="w-full font-black text-lg uppercase py-6"
+              className="w-full font-black text-base uppercase py-6 border-[3px]"
               size="lg"
               data-testid="button-place-order"
             >
-              Place Order
+              ▶ PLACE ORDER ◀
             </Button>
           </Card>
         </form>

@@ -8,56 +8,56 @@ export default function Hero() {
   };
 
   return (
-    <div className="relative border-b-4 border-foreground overflow-hidden grain-texture">
-      <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-background to-accent/20" />
+    <div className="relative border-b-[6px] border-foreground overflow-hidden xerox-grain">
+      <div className="absolute inset-0 bg-secondary" />
       
-      <div className="relative container mx-auto px-4 py-24 md:py-32">
-        <div className="max-w-4xl space-y-8">
-          <div className="space-y-4">
+      <div className="relative container mx-auto px-4 py-20 md:py-28">
+        <div className="max-w-4xl space-y-6">
+          <div className="space-y-3">
             <h1 
-              className="text-6xl md:text-8xl font-black uppercase leading-none punk-rotate-1"
+              className="text-6xl md:text-9xl font-black uppercase leading-[0.85] tracking-tighter punk-rotate-2"
               data-testid="text-hero-title"
             >
-              <span className="block text-foreground">SMASH THE</span>
-              <span className="block text-primary mt-2">MAINSTREAM</span>
+              <span className="block punk-rotate-3">SMASH</span>
+              <span className="block punk-rotate-1 -mt-2">THE</span>
+              <span className="block text-accent punk-rotate-4 -mt-2">SYSTEM</span>
             </h1>
-            <p className="text-xl md:text-2xl font-bold uppercase tracking-wide max-w-2xl" data-testid="text-hero-subtitle">
-              Authentic punk rock band tees. No posers. No sellouts. Just raw rebellion.
+            <p className="text-base md:text-xl font-black uppercase tracking-tight max-w-2xl leading-tight border-l-[4px] border-foreground pl-4 punk-rotate-1" data-testid="text-hero-subtitle">
+              AUTHENTIC PUNK ROCK BAND TEES /// NO POSERS /// NO SELLOUTS /// JUST RAW REBELLION
             </p>
           </div>
 
-          <div className="flex flex-wrap gap-4 pt-4">
+          <div className="flex flex-wrap gap-3 pt-4">
             <Button
               onClick={scrollToProducts}
               size="lg"
-              className="font-black uppercase text-lg px-8 py-6"
+              className="font-black uppercase text-base px-6 py-6 border-[3px] punk-rotate-2"
               data-testid="button-shop-now"
             >
-              Shop Now
-              <ArrowDown className="ml-2 h-5 w-5" />
+              ▼ SHOP NOW ▼
             </Button>
             <Button
               variant="secondary"
               size="lg"
-              className="font-black uppercase text-lg px-8 py-6"
+              className="font-black uppercase text-base px-6 py-6 border-[3px] punk-rotate-1"
               data-testid="button-learn-more"
             >
-              Our Story
+              READ ZINE
             </Button>
           </div>
 
-          <div className="flex flex-wrap gap-6 pt-8 border-t-2 border-foreground/30">
-            <div className="space-y-1">
-              <p className="text-3xl font-black text-primary" data-testid="text-stat-designs">50+</p>
-              <p className="text-sm font-bold uppercase tracking-wide text-muted-foreground">Designs</p>
+          <div className="flex flex-wrap gap-6 pt-6 border-t-[3px] border-foreground">
+            <div className="punk-rotate-1 border-[2px] border-foreground px-3 py-2">
+              <p className="text-4xl font-black" data-testid="text-stat-designs">50+</p>
+              <p className="text-[10px] font-black uppercase tracking-wider">DESIGNS</p>
             </div>
-            <div className="space-y-1">
-              <p className="text-3xl font-black text-primary" data-testid="text-stat-bands">30+</p>
-              <p className="text-sm font-bold uppercase tracking-wide text-muted-foreground">Bands</p>
+            <div className="punk-rotate-2 border-[2px] border-foreground px-3 py-2">
+              <p className="text-4xl font-black" data-testid="text-stat-bands">30+</p>
+              <p className="text-[10px] font-black uppercase tracking-wider">BANDS</p>
             </div>
-            <div className="space-y-1">
-              <p className="text-3xl font-black text-primary" data-testid="text-stat-shipping">FREE</p>
-              <p className="text-sm font-bold uppercase tracking-wide text-muted-foreground">Shipping</p>
+            <div className="punk-rotate-3 border-[2px] border-foreground px-3 py-2">
+              <p className="text-4xl font-black text-accent" data-testid="text-stat-shipping">FREE</p>
+              <p className="text-[10px] font-black uppercase tracking-wider">SHIPPING</p>
             </div>
           </div>
         </div>
