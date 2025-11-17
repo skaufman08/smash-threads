@@ -4,7 +4,8 @@ import Header from '@/components/Header';
 import Hero from '@/components/Hero';
 import ProductGrid from '@/components/ProductGrid';
 import CartDrawer from '@/components/CartDrawer';
-import { useCart } from '@/contexts/CartContext';
+import AddToCartDialog from '@/components/AddToCartDialog';
+import { useCart, Product } from '@/contexts/CartContext';
 import casualtiesImg from '@assets/generated_images/Casualties_band_t-shirt_design_fb471175.png';
 import deadKennedsImg from '@assets/generated_images/Dead_Kennedys_shirt_design_ac6edf07.png';
 import rancidImg from '@assets/generated_images/Rancid_band_t-shirt_bbfe9285.png';
@@ -15,28 +16,107 @@ import sexPistolsImg from '@assets/generated_images/Sex_Pistols_anarchy_shirt_4e
 import clashImg from '@assets/generated_images/The_Clash_graffiti_shirt_1cabb689.png';
 import { useToast } from '@/hooks/use-toast';
 
-const PRODUCTS = [
-  { id: '1', name: 'Riot Shield', price: 28, image: casualtiesImg, band: 'THE CASUALTIES' },
-  { id: '2', name: 'Anarchy Now', price: 30, image: deadKennedsImg, band: 'DEAD KENNEDYS' },
-  { id: '3', name: 'Street Punk', price: 29, image: rancidImg, band: 'RANCID' },
-  { id: '4', name: 'Dead Skull', price: 32, image: misfitsImg, band: 'MISFITS' },
-  { id: '5', name: 'Four Bars', price: 27, image: blackFlagImg, band: 'BLACK FLAG' },
-  { id: '6', name: 'Presidential Seal', price: 31, image: ramonesImg, band: 'RAMONES' },
-  { id: '7', name: 'Anarchy Symbol', price: 29, image: sexPistolsImg, band: 'SEX PISTOLS' },
-  { id: '8', name: 'Street Fighter', price: 30, image: clashImg, band: 'THE CLASH' },
+const PRODUCTS: Product[] = [
+  { 
+    id: '1', 
+    name: 'Riot Shield', 
+    price: 28, 
+    image: casualtiesImg, 
+    band: 'THE CASUALTIES',
+    description: 'Classic street punk design featuring The Casualties iconic logo. Raw energy captured in fabric form.',
+    sizes: ['S', 'M', 'L', 'XL'],
+    colors: ['Black', 'White', 'Red']
+  },
+  { 
+    id: '2', 
+    name: 'Anarchy Now', 
+    price: 30, 
+    image: deadKennedsImg, 
+    band: 'DEAD KENNEDYS',
+    description: 'Political punk at its finest. Dead Kennedys anti-establishment message blazed across 100% cotton.',
+    sizes: ['S', 'M', 'L', 'XL'],
+    colors: ['Black', 'White', 'Charcoal']
+  },
+  { 
+    id: '3', 
+    name: 'Street Punk', 
+    price: 29, 
+    image: rancidImg, 
+    band: 'RANCID',
+    description: 'East Bay punk legends. Rancid artwork that screams rebellion from every thread.',
+    sizes: ['S', 'M', 'L', 'XL'],
+    colors: ['Black', 'White', 'Navy']
+  },
+  { 
+    id: '4', 
+    name: 'Dead Skull', 
+    price: 32, 
+    image: misfitsImg, 
+    band: 'MISFITS',
+    description: 'Horror punk royalty. The legendary Misfits Crimson Ghost skull - a punk rock essential.',
+    sizes: ['S', 'M', 'L', 'XL'],
+    colors: ['Black', 'White', 'Red']
+  },
+  { 
+    id: '5', 
+    name: 'Four Bars', 
+    price: 27, 
+    image: blackFlagImg, 
+    band: 'BLACK FLAG',
+    description: 'The four bars that changed everything. Hardcore punk history stitched into premium fabric.',
+    sizes: ['S', 'M', 'L', 'XL'],
+    colors: ['Black', 'White', 'Grey']
+  },
+  { 
+    id: '6', 
+    name: 'Presidential Seal', 
+    price: 31, 
+    image: ramonesImg, 
+    band: 'RAMONES',
+    description: 'Hey Ho Lets Go! The iconic Ramones presidential seal - New York punk heritage.',
+    sizes: ['S', 'M', 'L', 'XL'],
+    colors: ['Black', 'White', 'Red']
+  },
+  { 
+    id: '7', 
+    name: 'Anarchy Symbol', 
+    price: 29, 
+    image: sexPistolsImg, 
+    band: 'SEX PISTOLS',
+    description: 'God Save The Queen. Sex Pistols anarchy symbol - the shirt that sparked a revolution.',
+    sizes: ['S', 'M', 'L', 'XL'],
+    colors: ['Black', 'White', 'Pink']
+  },
+  { 
+    id: '8', 
+    name: 'Street Fighter', 
+    price: 30, 
+    image: clashImg, 
+    band: 'THE CLASH',
+    description: 'The only band that matters. Combat rock attitude meets street punk style.',
+    sizes: ['S', 'M', 'L', 'XL'],
+    colors: ['Black', 'White', 'Army Green']
+  },
 ];
 
 export default function HomePage() {
   const [cartOpen, setCartOpen] = useState(false);
-  const { items, addToCart, updateQuantity, removeFromCart, total, itemCount } = useCart();
+  const [dialogOpen, setDialogOpen] = useState(false);
+  const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
+  const { items, addToCart, updateQuantity, removeFromCart, subtotal, tax, total, itemCount } = useCart();
   const [, setLocation] = useLocation();
   const { toast } = useToast();
 
-  const handleAddToCart = (product: typeof PRODUCTS[0]) => {
-    addToCart(product);
+  const handleOpenDialog = (product: Product) => {
+    setSelectedProduct(product);
+    setDialogOpen(true);
+  };
+
+  const handleAddToCart = (product: Product, size: string, color: string) => {
+    addToCart(product, size, color);
     toast({
       title: 'Added to Cart!',
-      description: `${product.name} has been added to your cart.`,
+      description: `${product.name} (${size}, ${color}) added to cart.`,
       duration: 2000,
     });
   };
@@ -51,7 +131,7 @@ export default function HomePage() {
       <Header cartItemCount={itemCount} onCartClick={() => setCartOpen(true)} />
       <Hero />
       <div id="products">
-        <ProductGrid products={PRODUCTS} onAddToCart={handleAddToCart} />
+        <ProductGrid products={PRODUCTS} onAddToCart={handleOpenDialog} />
       </div>
       <CartDrawer
         open={cartOpen}
@@ -59,8 +139,16 @@ export default function HomePage() {
         items={items}
         onUpdateQuantity={updateQuantity}
         onRemove={removeFromCart}
+        subtotal={subtotal}
+        tax={tax}
         total={total}
         onCheckout={handleCheckout}
+      />
+      <AddToCartDialog
+        product={selectedProduct}
+        open={dialogOpen}
+        onClose={() => setDialogOpen(false)}
+        onAddToCart={handleAddToCart}
       />
     </div>
   );

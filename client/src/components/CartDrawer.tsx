@@ -9,8 +9,10 @@ interface CartDrawerProps {
   open: boolean;
   onClose: () => void;
   items: CartItem[];
-  onUpdateQuantity: (id: string, quantity: number) => void;
-  onRemove: (id: string) => void;
+  onUpdateQuantity: (id: string, size: string, color: string, quantity: number) => void;
+  onRemove: (id: string, size: string, color: string) => void;
+  subtotal: number;
+  tax: number;
   total: number;
   onCheckout: () => void;
 }
@@ -21,6 +23,8 @@ export default function CartDrawer({
   items,
   onUpdateQuantity,
   onRemove,
+  subtotal,
+  tax,
   total,
   onCheckout,
 }: CartDrawerProps) {
@@ -49,16 +53,16 @@ export default function CartDrawer({
           <div className="flex flex-col h-[calc(100vh-200px)]">
             <ScrollArea className="flex-1 pr-4">
               <div className="space-y-4 py-6">
-                {items.map((item, index) => (
+                {items.map((item) => (
                   <div
-                    key={item.id}
+                    key={`${item.id}-${item.selectedSize}-${item.selectedColor}`}
                     className="border-[3px] border-foreground p-3 space-y-2 relative overflow-visible xerox-grain"
                     data-testid={`cart-item-${item.id}`}
                   >
                     <Button
                       variant="ghost"
                       size="icon"
-                      onClick={() => onRemove(item.id)}
+                      onClick={() => onRemove(item.id, item.selectedSize, item.selectedColor)}
                       className="absolute -top-3 -right-3 h-9 w-9 bg-destructive text-destructive-foreground hover:bg-destructive border-[3px] border-foreground punk-rotate-5"
                       data-testid={`button-remove-${item.id}`}
                     >
@@ -79,6 +83,14 @@ export default function CartDrawer({
                         <h4 className="font-black uppercase text-sm leading-tight" data-testid={`text-cart-name-${item.id}`}>
                           {item.name}
                         </h4>
+                        <div className="flex gap-1.5 mt-1">
+                          <Badge variant="outline" className="text-[8px] font-black px-1.5 py-0.5 border-[1px]" data-testid={`badge-size-${item.id}`}>
+                            {item.selectedSize}
+                          </Badge>
+                          <Badge variant="outline" className="text-[8px] font-black px-1.5 py-0.5 border-[1px]" data-testid={`badge-color-${item.id}`}>
+                            {item.selectedColor}
+                          </Badge>
+                        </div>
                         <p className="text-xs font-black mt-0.5" data-testid={`text-cart-price-${item.id}`}>
                           ${item.price}
                         </p>
@@ -90,7 +102,7 @@ export default function CartDrawer({
                         <Button
                           variant="secondary"
                           size="icon"
-                          onClick={() => onUpdateQuantity(item.id, item.quantity - 1)}
+                          onClick={() => onUpdateQuantity(item.id, item.selectedSize, item.selectedColor, item.quantity - 1)}
                           disabled={item.quantity <= 1}
                           className="h-8 w-8 border-[2px]"
                           data-testid={`button-decrease-${item.id}`}
@@ -103,7 +115,7 @@ export default function CartDrawer({
                         <Button
                           variant="secondary"
                           size="icon"
-                          onClick={() => onUpdateQuantity(item.id, item.quantity + 1)}
+                          onClick={() => onUpdateQuantity(item.id, item.selectedSize, item.selectedColor, item.quantity + 1)}
                           className="h-8 w-8 border-[2px]"
                           data-testid={`button-increase-${item.id}`}
                         >
@@ -120,11 +132,25 @@ export default function CartDrawer({
             </ScrollArea>
 
             <div className="border-t-[4px] border-foreground pt-4 space-y-3 mt-4">
-              <div className="flex justify-between items-center border-[3px] border-foreground p-3 punk-rotate-1">
-                <span className="text-2xl font-black uppercase tracking-tight">TOTAL:</span>
-                <span className="text-3xl font-black" data-testid="text-cart-total">
-                  ${total.toFixed(2)}
-                </span>
+              <div className="space-y-2 border-[2px] border-foreground p-3">
+                <div className="flex justify-between items-center">
+                  <span className="text-sm font-black uppercase">SUBTOTAL:</span>
+                  <span className="text-lg font-black" data-testid="text-cart-subtotal">
+                    ${subtotal.toFixed(2)}
+                  </span>
+                </div>
+                <div className="flex justify-between items-center">
+                  <span className="text-sm font-black uppercase">TAX (8%):</span>
+                  <span className="text-lg font-black" data-testid="text-cart-tax">
+                    ${tax.toFixed(2)}
+                  </span>
+                </div>
+                <div className="flex justify-between items-center pt-2 border-t-[2px] border-foreground">
+                  <span className="text-xl font-black uppercase tracking-tight">TOTAL:</span>
+                  <span className="text-2xl font-black" data-testid="text-cart-total">
+                    ${total.toFixed(2)}
+                  </span>
+                </div>
               </div>
               <Button
                 onClick={onCheckout}

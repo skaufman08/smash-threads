@@ -50,7 +50,7 @@ export default function OrderConfirmation({
           </h2>
           {items.map((item) => (
             <div
-              key={item.id}
+              key={`${item.id}-${item.selectedSize}-${item.selectedColor}`}
               className="flex justify-between items-center py-3 border-b-[2px] border-foreground"
               data-testid={`order-item-${item.id}`}
             >
@@ -63,7 +63,11 @@ export default function OrderConfirmation({
                 />
                 <div>
                   <p className="font-black uppercase text-sm" data-testid={`text-order-name-${item.id}`}>{item.name}</p>
-                  <p className="text-xs font-black">
+                  <div className="flex gap-1.5 mt-0.5">
+                    <span className="text-[8px] font-black border border-foreground px-1">{item.selectedSize}</span>
+                    <span className="text-[8px] font-black border border-foreground px-1">{item.selectedColor}</span>
+                  </div>
+                  <p className="text-xs font-black mt-0.5">
                     QTY: <span data-testid={`text-order-qty-${item.id}`}>{item.quantity}</span> × ${item.price}
                   </p>
                 </div>
