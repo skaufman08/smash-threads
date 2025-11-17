@@ -59,6 +59,16 @@ const PRODUCTS: Product[] = [
     sizes: ['S', 'M', 'L', 'XL'],
     colors: ['Black', 'White', 'Navy']
   },
+  { 
+    id: '6', 
+    name: 'Love Punk', 
+    price: 29, 
+    image: 'https://images.pexels.com/photos/16097217/pexels-photo-16097217.jpeg', 
+    band: 'STREET FURY',
+    description: 'Unfiltered aggression and pure punk energy. No compromise, no apologies.',
+    sizes: ['S', 'M', 'L', 'XL'],
+    colors: ['Black', 'White', 'Grey']
+  },
 ];
 
 export default function HomePage() {
