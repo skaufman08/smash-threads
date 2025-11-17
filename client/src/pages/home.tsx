@@ -6,7 +6,6 @@ import ProductGrid from '@/components/ProductGrid';
 import CartDrawer from '@/components/CartDrawer';
 import AddToCartDialog from '@/components/AddToCartDialog';
 import { useCart, Product } from '@/contexts/CartContext';
-import casualtiesImg from '@assets/generated_images/Casualties_band_t-shirt_design_fb471175.png';
 import deadKennedsImg from '@assets/generated_images/Dead_Kennedys_shirt_design_ac6edf07.png';
 import rancidImg from '@assets/generated_images/Rancid_band_t-shirt_bbfe9285.png';
 import misfitsImg from '@assets/generated_images/Misfits_skull_t-shirt_d9340758.png';
@@ -21,7 +20,7 @@ const PRODUCTS: Product[] = [
     id: '1', 
     name: 'Riot Shield', 
     price: 28, 
-    image: casualtiesImg, 
+    image: 'https://images.unsplash.com/photo-1538751252895-baf363358ff7?q=80&w=774&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', 
     band: 'THE CASUALTIES',
     description: 'Classic street punk design featuring The Casualties iconic logo. Raw energy captured in fabric form.',
     sizes: ['S', 'M', 'L', 'XL'],
