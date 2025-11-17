@@ -11,20 +11,20 @@ import { useToast } from '@/hooks/use-toast';
 const PRODUCTS: Product[] = [
   { 
     id: '1', 
-    name: 'Riot Shield', 
-    price: 28, 
+    name: 'Saltwater', 
+    price: 30, 
     image: 'https://images.unsplash.com/photo-1695088647626-1d7c1d20f9c4?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fHB1bmslMjByb2NrJTIwdHNoaXJ0fGVufDB8fDB8fHww', 
-    band: 'THE CASUALTIES',
-    description: 'Classic street punk design featuring The Casualties iconic logo. Raw energy captured in fabric form.',
+    band: 'JOY DIVISION',
+    description: 'Classic street punk design featuring Joy Division iconic logo. Raw energy captured in fabric form.',
     sizes: ['S', 'M', 'L', 'XL'],
     colors: ['Black', 'White', 'Red']
   },
   { 
     id: '2', 
-    name: 'Underground', 
-    price: 29, 
+    name: 'Hybrid Moments', 
+    price: 25, 
     image: 'https://images.unsplash.com/photo-1645093875147-4678b3671e3c?q=80&w=774&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', 
-    band: 'RIOT CREW',
+    band: 'MISFITS',
     description: 'Raw underground sound captured in cotton. For those who live the rebellion every day.',
     sizes: ['S', 'M', 'L', 'XL'],
     colors: ['Black', 'White', 'Grey']
@@ -58,16 +58,6 @@ const PRODUCTS: Product[] = [
     description: 'Dark melodies and shattered expectations. Street punk meets post-hardcore intensity.',
     sizes: ['S', 'M', 'L', 'XL'],
     colors: ['Black', 'White', 'Navy']
-  },
-  { 
-    id: '6', 
-    name: 'Raw Power', 
-    price: 29, 
-    image: 'https://images.pexels.com/photos/16097217/pexels-photo-16097217.jpeg', 
-    band: 'STREET FURY',
-    description: 'Unfiltered aggression and pure punk energy. No compromise, no apologies.',
-    sizes: ['S', 'M', 'L', 'XL'],
-    colors: ['Black', 'White', 'Grey']
   },
 ];
 
