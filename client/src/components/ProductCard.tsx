@@ -30,7 +30,7 @@ export default function ProductCard({ product, onAddToCart, rotationClass = '' }
         <img
           src={product.image}
           alt={product.name}
-          className="w-full h-full object-cover contrast-125 grayscale-[30%]"
+          className="w-full h-full object-cover contrast-125 grayscale-[30%] transition-transform duration-300 hover:scale-110 hover:-translate-y-2"
           data-testid={`img-product-${product.id}`}
         />
       </div>
