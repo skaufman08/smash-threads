@@ -31,43 +31,33 @@ const PRODUCTS: Product[] = [
   },
   { 
     id: '3', 
-    name: 'Rebel Soul', 
+    name: 'Chaos Theory', 
     price: 31, 
     image: 'https://images.unsplash.com/photo-1530286910461-6a1960d1e83a?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', 
-    band: 'CHAOS THEORY',
+    band: 'GEORGE ORWELL',
     description: 'Street punk attitude meets hardcore edge. Wear your rebellion loud and proud.',
     sizes: ['S', 'M', 'L', 'XL'],
     colors: ['Black', 'White', 'Charcoal']
   },
   { 
     id: '4', 
-    name: 'Noise Maker', 
-    price: 28, 
+    name: 'Despondent', 
+    price: 30, 
     image: 'https://images.unsplash.com/photo-1627250259974-fb70f4e1a176?q=80&w=774&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', 
-    band: 'STATIC RAGE',
+    band: 'LA LUNE',
     description: 'Distortion and defiance woven into every thread. Maximum volume, maximum attitude.',
     sizes: ['S', 'M', 'L', 'XL'],
     colors: ['Black', 'White', 'Red']
   },
   { 
     id: '5', 
-    name: 'Broken Dreams', 
+    name: 'Baby, I love you', 
     price: 30, 
     image: 'https://images.unsplash.com/photo-1546998590-6a6195049fa7?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', 
-    band: 'VOID WALKERS',
+    band: 'Ramones',
     description: 'Dark melodies and shattered expectations. Street punk meets post-hardcore intensity.',
     sizes: ['S', 'M', 'L', 'XL'],
     colors: ['Black', 'White', 'Navy']
-  },
-  { 
-    id: '6', 
-    name: 'Raw Power', 
-    price: 29, 
-    image: 'https://images.pexels.com/photos/16097217/pexels-photo-16097217.jpeg', 
-    band: 'STREET FURY',
-    description: 'Unfiltered aggression and pure punk energy. No compromise, no apologies.',
-    sizes: ['S', 'M', 'L', 'XL'],
-    colors: ['Black', 'White', 'Grey']
   },
 ];
 
