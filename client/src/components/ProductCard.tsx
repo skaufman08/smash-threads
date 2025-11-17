@@ -13,7 +13,10 @@ interface ProductCardProps {
 export default function ProductCard({ product, onAddToCart, rotationClass = '' }: ProductCardProps) {
   return (
     <Card 
-      className={`overflow-visible border-[3px] border-foreground relative ${rotationClass} hover-elevate active-elevate-2 transition-transform xerox-grain`}
+      className={`overflow-visible border-[3px] border-foreground relative ${rotationClass} transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl xerox-grain rounded-lg`}
+      style={{
+        filter: 'drop-shadow(4px 4px 0px rgba(0, 0, 0, 0.3))',
+      }}
       data-testid={`card-product-${product.id}`}
     >
       <div className="absolute -top-3 -right-3 z-10">
@@ -26,7 +29,7 @@ export default function ProductCard({ product, onAddToCart, rotationClass = '' }
         </Badge>
       </div>
       
-      <div className="aspect-square overflow-hidden bg-card border-b-[3px] border-foreground">
+      <div className="aspect-square overflow-hidden bg-card border-b-[3px] border-foreground rounded-t-lg">
         <img
           src={product.image}
           alt={product.name}
@@ -35,19 +38,19 @@ export default function ProductCard({ product, onAddToCart, rotationClass = '' }
         />
       </div>
       
-      <div className="p-3 space-y-2">
-        <div>
+      <div className="p-4 space-y-4">
+        <div className="space-y-2">
           <p className="text-[10px] font-black uppercase tracking-widest" data-testid={`text-band-${product.id}`}>
             {product.band}
           </p>
-          <h3 className="font-black text-xl uppercase mt-0.5 leading-tight" data-testid={`text-name-${product.id}`}>
+          <h3 className="font-black text-xl uppercase leading-tight" data-testid={`text-name-${product.id}`}>
             {product.name}
           </h3>
         </div>
         
         <Button
           onClick={() => onAddToCart(product)}
-          className="w-full font-black uppercase tracking-wider text-xs border-[3px]"
+          className="w-full font-black uppercase tracking-wider text-xs border-[3px] bg-red-600 hover:bg-red-700 text-black border-black rounded-none"
           size="default"
           data-testid={`button-add-cart-${product.id}`}
         >
