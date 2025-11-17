@@ -116,6 +116,16 @@ const PRODUCTS: Product[] = [
     sizes: ['S', 'M', 'L', 'XL'],
     colors: ['Black', 'White', 'Charcoal']
   },
+  { 
+    id: '11', 
+    name: 'Noise Maker', 
+    price: 28, 
+    image: 'https://images.unsplash.com/photo-1627250259974-fb70f4e1a176?q=80&w=774&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', 
+    band: 'STATIC RAGE',
+    description: 'Distortion and defiance woven into every thread. Maximum volume, maximum attitude.',
+    sizes: ['S', 'M', 'L', 'XL'],
+    colors: ['Black', 'White', 'Red']
+  },
 ];
 
 export default function HomePage() {
