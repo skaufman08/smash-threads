@@ -96,6 +96,16 @@ const PRODUCTS: Product[] = [
     sizes: ['S', 'M', 'L', 'XL'],
     colors: ['Black', 'White', 'Army Green']
   },
+  { 
+    id: '9', 
+    name: 'Underground', 
+    price: 29, 
+    image: 'https://images.unsplash.com/photo-1645093875147-4678b3671e3c?q=80&w=774&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', 
+    band: 'RIOT CREW',
+    description: 'Raw underground sound captured in cotton. For those who live the rebellion every day.',
+    sizes: ['S', 'M', 'L', 'XL'],
+    colors: ['Black', 'White', 'Grey']
+  },
 ];
 
 export default function HomePage() {
