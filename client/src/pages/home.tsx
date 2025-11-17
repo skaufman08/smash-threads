@@ -49,6 +49,16 @@ const PRODUCTS: Product[] = [
     sizes: ['S', 'M', 'L', 'XL'],
     colors: ['Black', 'White', 'Red']
   },
+  { 
+    id: '5', 
+    name: 'Broken Dreams', 
+    price: 30, 
+    image: 'https://images.unsplash.com/photo-1546998590-6a6195049fa7?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', 
+    band: 'VOID WALKERS',
+    description: 'Dark melodies and shattered expectations. Street punk meets post-hardcore intensity.',
+    sizes: ['S', 'M', 'L', 'XL'],
+    colors: ['Black', 'White', 'Navy']
+  },
 ];
 
 export default function HomePage() {
